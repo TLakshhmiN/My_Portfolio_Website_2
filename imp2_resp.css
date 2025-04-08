@@ -1,0 +1,153 @@
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+    section { padding: 60px 30px; }
+}
+
+@media screen and (max-width: 768px) {
+    /* Navigation */
+    .navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+    .navbar .right {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+    }
+    .navbar .right a {
+        margin: 10px 0;
+        justify-content: center;
+    }
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 25px;
+        color: white;
+    }
+    .navbar.active .right { display: flex; }
+
+    /* Hero Section */
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-section .text,
+    .hero-section .headshot {
+        flex: none;
+        width: 100%;
+    }
+    .hero-section .headshot {
+        margin-top: 30px;
+    }
+    .hero-section .text .links {
+        justify-content: center;
+    }
+
+    /* Education Timeline */
+    .timeline::before { left: 20px; }
+    .timeline-item .timeline-content {
+        width: 100%;
+        margin-left: 40px !important;
+        margin-right: 0 !important;
+    }
+    .timeline-dot { left: 10px; }
+
+    /* Projects & Sections */
+    .skills-container,
+    .projects-container {
+        flex-direction: column;
+    }
+
+    /* Testimonials */
+    .testimonial-content {
+        flex-direction: column;
+        height: auto;
+        text-align: center;
+    }
+    .testimonial-person { 
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    /* Contact Section */
+    .contact-section .group {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .contact-section .text,
+    .contact-section .text2 {
+        margin: 0;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    section { padding: 40px 15px; }
+    .hero-section .text h2 { font-size: 2rem; }
+    .hero-section .headshot img {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+/* Responsive Navigation Styles */
+@media screen and (max-width: 768px) {
+    .navbar {
+        position: relative;
+        padding: 15px;
+    }
+
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1000;
+        cursor: pointer;
+    }
+
+    .navbar .right {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(17, 22, 32, 0.95);
+        flex-direction: column;
+        padding: 20px 0;
+        z-index: 999;
+    }
+
+    .navbar .right.show-menu {
+        display: flex;
+        animation: slideDown 0.3s ease;
+    }
+
+    .navbar .right a {
+        width: 100%;
+        text-align: center;
+        padding: 15px;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .menu-toggle.active i::before {
+        content: '\f00d'; /* Font Awesome close icon */
+        font-family: 'Font Awesome 5 Free';
+    }
+
+    @keyframes slideDown {
+        from { opacity: 0; transform: translateY(-20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 480px) {
+    .navbar .right a {
+        font-size: 0.9rem;
+        padding: 12px;
+    }
+}
